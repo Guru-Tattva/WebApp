@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import FindCenter from "@/pages/FindCenter";
 import NotFound from "@/pages/not-found";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <ParticlesBackground />
         <Toaster />
         <Router />
       </TooltipProvider>

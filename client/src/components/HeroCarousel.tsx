@@ -16,6 +16,7 @@ const slides = [
     cta1: "Start Your Journey",
     cta2: "Learn More",
     image: heroMeditation,
+    decorations: "meditation",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const slides = [
     cta1: "Know Gurudev",
     cta2: "His Teachings",
     image: heroGuru,
+    decorations: "guru",
   },
   {
     id: 3,
@@ -36,8 +38,131 @@ const slides = [
     cta1: "Find Near You",
     cta2: "Virtual Tour",
     image: heroTemple,
+    decorations: "temple",
   },
 ];
+
+function MeditationDecorations() {
+  return (
+    <>
+      <motion.div
+        className="absolute -top-8 -right-8 w-32 h-32"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/40">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="8 4" />
+          <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 3" />
+        </svg>
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-6 -left-6 w-24 h-24"
+        animate={{ y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full text-primary/30">
+          <path d="M50 10 C30 30, 10 50, 50 90 C90 50, 70 30, 50 10" fill="currentColor" />
+        </svg>
+      </motion.div>
+      <motion.div
+        className="absolute top-1/2 -right-4 w-16 h-16"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-accent/40 to-primary/20" />
+      </motion.div>
+      <div className="absolute -top-4 left-1/4 w-3 h-3 rounded-full bg-accent/50" />
+      <div className="absolute bottom-1/4 -right-2 w-2 h-2 rounded-full bg-primary/40" />
+    </>
+  );
+}
+
+function GuruDecorations() {
+  return (
+    <>
+      <motion.div
+        className="absolute -top-10 -left-10 w-40 h-40"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full text-primary/25">
+          <path d="M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z" fill="currentColor" />
+        </svg>
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-8 -right-8 w-28 h-28"
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/35">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" />
+          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="1" />
+          <circle cx="50" cy="50" r="8" fill="currentColor" />
+        </svg>
+      </motion.div>
+      <motion.div
+        className="absolute top-1/4 -left-6 w-12 h-12"
+        animate={{ y: [0, 15, 0] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-full h-full rounded-full border-2 border-primary/30" />
+      </motion.div>
+      <div className="absolute -top-2 right-1/4 w-4 h-4 rounded-full bg-accent/40" />
+      <div className="absolute bottom-1/3 -left-3 w-2 h-2 rounded-full bg-primary/30" />
+    </>
+  );
+}
+
+function TempleDecorations() {
+  return (
+    <>
+      <motion.div
+        className="absolute -top-6 -right-6 w-36 h-36"
+        animate={{ rotate: 180, scale: [1, 1.05, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/30">
+          <polygon points="50,5 95,50 50,95 5,50" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <polygon points="50,15 85,50 50,85 15,50" fill="none" stroke="currentColor" strokeWidth="1" />
+        </svg>
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-10 -left-8 w-32 h-32"
+        animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
+        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full text-primary/25">
+          <path d="M50 10 L60 40 L95 40 L68 58 L78 90 L50 72 L22 90 L32 58 L5 40 L40 40 Z" fill="currentColor" opacity="0.5" />
+        </svg>
+      </motion.div>
+      <motion.div
+        className="absolute top-1/3 -right-5 w-16 h-16"
+        animate={{ rotate: [0, 10, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/40">
+          <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" strokeWidth="2" transform="rotate(45 50 50)" />
+        </svg>
+      </motion.div>
+      <div className="absolute top-1/4 -left-4 w-3 h-3 rounded-full bg-accent/50" />
+      <div className="absolute -bottom-2 right-1/3 w-4 h-4 rounded-full bg-primary/30" />
+    </>
+  );
+}
+
+function DecorationWrapper({ type }: { type: string }) {
+  switch (type) {
+    case "meditation":
+      return <MeditationDecorations />;
+    case "guru":
+      return <GuruDecorations />;
+    case "temple":
+      return <TempleDecorations />;
+    default:
+      return null;
+  }
+}
 
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -62,8 +187,8 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-7rem)] bg-gradient-to-br from-background via-card to-muted/30 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
+    <section className="relative min-h-[calc(100vh-7rem)] bg-gradient-to-br from-background via-card/30 to-muted/20 overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-primary blur-3xl" />
         <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-accent blur-3xl" />
       </div>
@@ -83,7 +208,7 @@ export default function HeroCarousel() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block text-sm font-medium text-secondary uppercase tracking-wider"
+                className="inline-block text-sm font-medium text-accent uppercase tracking-wider"
               >
                 {slides[currentSlide].subtitle}
               </motion.span>
@@ -114,7 +239,7 @@ export default function HeroCarousel() {
               >
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+                  className="bg-primary text-primary-foreground border-primary-border px-8"
                   data-testid="button-hero-cta-primary"
                 >
                   {slides[currentSlide].cta1}
@@ -122,7 +247,7 @@ export default function HeroCarousel() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary text-primary hover:bg-primary/10"
+                  className="border-primary text-primary"
                   data-testid="button-hero-cta-secondary"
                 >
                   {slides[currentSlide].cta2}
@@ -136,17 +261,19 @@ export default function HeroCarousel() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="order-1 lg:order-2 relative"
             >
-              <div className="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent z-10" />
-                <img
-                  src={slides[currentSlide].image}
-                  alt={slides[currentSlide].title}
-                  className="w-full h-full object-cover"
-                  data-testid={`img-hero-${currentSlide}`}
-                />
+              <div className="relative">
+                <DecorationWrapper type={slides[currentSlide].decorations} />
+                
+                <div className="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-card-border/50">
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent z-10" />
+                  <img
+                    src={slides[currentSlide].image}
+                    alt={slides[currentSlide].title}
+                    className="w-full h-full object-cover"
+                    data-testid={`img-hero-${currentSlide}`}
+                  />
+                </div>
               </div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
             </motion.div>
           </motion.div>
         </AnimatePresence>
@@ -167,10 +294,10 @@ export default function HeroCarousel() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentSlide
                     ? "bg-primary w-8"
-                    : "bg-muted hover:bg-primary/50"
+                    : "bg-muted w-2 hover:bg-primary/50"
                 }`}
                 data-testid={`button-slide-indicator-${index}`}
               />
