@@ -3,6 +3,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import AnalyticsSection from "@/components/AnalyticsSection";
 import NearestReachSection from "@/components/NearestReachSection";
 import BenefitsTimeline from "@/components/BenefitsTimeline";
+import JoinGurukaryaSection from "@/components/JoinGurukaryaSection";
 import EventsSection from "@/components/EventsSection";
 import DonateSection from "@/components/DonateSection";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
         <AnalyticsSection />
         <NearestReachSection />
         <BenefitsTimeline />
+        <JoinGurukaryaSection />
         <EventsSection />
         <DonateSection />
       </main>
