@@ -19,6 +19,7 @@ import Signup from "@/pages/Signup";
 import Verify from "@/pages/Verify";
 import Profile from "@/pages/Profile";
 import FindCenter from "@/pages/FindCenter";
+import Certificates from "@/pages/Certificates";
 import NotFound from "@/pages/not-found";
 import ParticlesBackground from "@/components/ParticlesBackground";
 
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/verify" component={Verify} />
       <Route path="/profile" component={Profile} />
       <Route path="/find-center" component={FindCenter} />
+      <Route path="/certificates" component={Certificates} />
       <Route component={NotFound} />
     </Switch>
   );
