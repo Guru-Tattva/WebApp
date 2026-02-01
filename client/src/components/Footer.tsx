@@ -145,7 +145,8 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-center text-xs text-muted-foreground mt-4">
-            ॐ सर्वे भवन्तु सुखिनः । सर्वे सन्तु निरामयाः ।
+            मैं एक पवित्र आत्मा हूॅं।<br />
+            मैं एक शुद्ध आत्मा हूॅं।
           </p>
         </div>
       </div>

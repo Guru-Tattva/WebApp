@@ -61,7 +61,8 @@ export default function SidePanel({ isOpen }: SidePanelProps) {
 
       <div className="border-t border-border p-3 bg-muted/30">
         <p className="text-xs text-center text-muted-foreground">
-          ॐ सर्वे भवन्तु सुखिनः
+          मैं एक पवित्र आत्मा हूॅं।<br />
+          मैं एक शुद्ध आत्मा हूॅं।
         </p>
       </div>
     </div>
