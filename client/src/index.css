@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE - GuruTattva Elegant Spiritual Theme (60:30:10 Rule)
-   60% - Warm cream/champagne backgrounds
-   30% - Deep teal/forest green secondary
-   10% - Soft gold/amber accent
+/* LIGHT MODE - GuruTattva Aboli Theme (60:30:10 Rule)
+   60% - Soft cream/ice pack backgrounds
+   30% - Aboli (warm peachy pink #E69E8F)
+   10% - Deep Teal & Sunspot accents
 */
 :root {
   --button-outline: rgba(0,0,0, .10);
@@ -13,43 +13,43 @@
   --opaque-button-border-intensity: -8;
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
-  /* 60% - Warm cream/champagne backgrounds */
-  --background: 45 35% 96%;
-  --foreground: 160 25% 15%;
-  --border: 45 20% 88%;
-  --card: 45 30% 98%;
-  --card-foreground: 160 25% 15%;
-  --card-border: 45 20% 88%;
-  --sidebar: 160 15% 97%;
-  --sidebar-foreground: 160 25% 15%;
-  --sidebar-border: 160 12% 88%;
-  /* 30% - Deep teal/forest green */
-  --sidebar-primary: 168 45% 35%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 168 20% 92%;
-  --sidebar-accent-foreground: 160 25% 15%;
-  --sidebar-ring: 168 45% 35%;
-  --popover: 45 30% 98%;
-  --popover-foreground: 160 25% 15%;
-  --popover-border: 45 20% 88%;
-  --primary: 168 45% 35%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 168 20% 80%;
-  --secondary-foreground: 168 30% 20%;
-  --muted: 45 15% 92%;
-  --muted-foreground: 160 12% 45%;
-  /* 10% - Soft gold/amber accent */
-  --accent: 38 70% 50%;
-  --accent-foreground: 38 50% 10%;
+  /* 60% - Ice Pack inspired soft backgrounds */
+  --background: 30 30% 97%;
+  --foreground: 10 25% 20%;
+  --border: 30 20% 88%;
+  --card: 30 25% 99%;
+  --card-foreground: 10 25% 20%;
+  --card-border: 30 18% 88%;
+  --sidebar: 10 20% 97%;
+  --sidebar-foreground: 10 25% 20%;
+  --sidebar-border: 10 15% 88%;
+  /* 30% - Aboli (warm peachy pink #E69E8F) */
+  --sidebar-primary: 10 62% 73%;
+  --sidebar-primary-foreground: 10 30% 15%;
+  --sidebar-accent: 10 40% 94%;
+  --sidebar-accent-foreground: 10 25% 20%;
+  --sidebar-ring: 10 62% 73%;
+  --popover: 30 25% 99%;
+  --popover-foreground: 10 25% 20%;
+  --popover-border: 30 18% 88%;
+  --primary: 10 62% 73%;
+  --primary-foreground: 10 30% 15%;
+  --secondary: 10 45% 88%;
+  --secondary-foreground: 10 35% 25%;
+  --muted: 30 15% 93%;
+  --muted-foreground: 10 15% 45%;
+  /* 10% - Deep Teal accent */
+  --accent: 180 50% 35%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 65% 50%;
   --destructive-foreground: 0 65% 98%;
-  --input: 45 15% 82%;
-  --ring: 168 45% 35%;
-  --chart-1: 168 45% 40%;
-  --chart-2: 38 70% 55%;
-  --chart-3: 45 40% 60%;
-  --chart-4: 200 50% 55%;
-  --chart-5: 340 45% 55%;
+  --input: 30 15% 85%;
+  --ring: 10 62% 73%;
+  --chart-1: 10 62% 73%;
+  --chart-2: 180 50% 40%;
+  --chart-3: 45 60% 55%;
+  --chart-4: 350 50% 65%;
+  --chart-5: 200 45% 55%;
   --font-sans: 'Poppins', sans-serif;
   --font-serif: 'Playfair Display', serif;
   --font-mono: Menlo, monospace;
@@ -100,43 +100,43 @@
   --opaque-button-border-intensity: 9;
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
-  /* 60% - Deep forest/charcoal */
-  --background: 160 20% 8%;
-  --foreground: 45 30% 95%;
-  --border: 160 15% 18%;
-  --card: 160 18% 12%;
-  --card-foreground: 45 30% 95%;
-  --card-border: 160 15% 18%;
-  --sidebar: 160 20% 10%;
-  --sidebar-foreground: 45 30% 95%;
-  --sidebar-border: 160 15% 15%;
-  /* 30% - Teal/emerald green */
-  --sidebar-primary: 168 50% 45%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 168 20% 20%;
-  --sidebar-accent-foreground: 45 30% 95%;
-  --sidebar-ring: 168 50% 45%;
-  --popover: 160 18% 14%;
-  --popover-foreground: 45 30% 95%;
-  --popover-border: 160 15% 20%;
-  --primary: 168 50% 45%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 168 25% 30%;
-  --secondary-foreground: 168 15% 90%;
-  --muted: 160 12% 18%;
-  --muted-foreground: 45 20% 60%;
-  /* 10% - Soft gold accent */
-  --accent: 38 65% 50%;
-  --accent-foreground: 38 50% 10%;
+  /* 60% - Deep warm charcoal */
+  --background: 10 15% 10%;
+  --foreground: 30 25% 95%;
+  --border: 10 12% 20%;
+  --card: 10 12% 14%;
+  --card-foreground: 30 25% 95%;
+  --card-border: 10 12% 20%;
+  --sidebar: 10 15% 12%;
+  --sidebar-foreground: 30 25% 95%;
+  --sidebar-border: 10 12% 18%;
+  /* 30% - Aboli (warm peachy pink - lighter for dark mode) */
+  --sidebar-primary: 10 55% 65%;
+  --sidebar-primary-foreground: 10 25% 12%;
+  --sidebar-accent: 10 25% 22%;
+  --sidebar-accent-foreground: 30 25% 95%;
+  --sidebar-ring: 10 55% 65%;
+  --popover: 10 12% 16%;
+  --popover-foreground: 30 25% 95%;
+  --popover-border: 10 12% 22%;
+  --primary: 10 55% 65%;
+  --primary-foreground: 10 25% 12%;
+  --secondary: 10 30% 28%;
+  --secondary-foreground: 10 20% 90%;
+  --muted: 10 10% 20%;
+  --muted-foreground: 30 18% 60%;
+  /* 10% - Deep Teal accent */
+  --accent: 180 45% 45%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 60% 45%;
   --destructive-foreground: 0 60% 98%;
-  --input: 160 12% 22%;
-  --ring: 168 50% 45%;
-  --chart-1: 168 50% 50%;
-  --chart-2: 38 65% 55%;
-  --chart-3: 45 35% 55%;
-  --chart-4: 200 50% 60%;
-  --chart-5: 340 50% 55%;
+  --input: 10 10% 25%;
+  --ring: 10 55% 65%;
+  --chart-1: 10 55% 70%;
+  --chart-2: 180 45% 50%;
+  --chart-3: 45 50% 55%;
+  --chart-4: 350 45% 60%;
+  --chart-5: 200 45% 55%;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
@@ -354,20 +354,20 @@
   .gradient-primary {
     background: linear-gradient(135deg, 
       hsl(var(--primary)) 0%, 
-      hsl(168 55% 28%) 100%);
+      hsl(10 50% 65%) 100%);
   }
 
   .gradient-accent {
     background: linear-gradient(135deg, 
       hsl(var(--accent)) 0%, 
-      hsl(45 75% 45%) 100%);
+      hsl(180 45% 30%) 100%);
   }
 
   .gradient-header {
     background: linear-gradient(135deg, 
-      hsl(var(--primary)) 0%, 
-      hsl(168 50% 30%) 50%, 
-      hsl(var(--primary)) 100%);
+      hsl(10 55% 68%) 0%, 
+      hsl(10 50% 60%) 50%, 
+      hsl(10 45% 55%) 100%);
   }
 
   .gradient-text-primary {
