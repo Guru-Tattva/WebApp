@@ -118,36 +118,100 @@ function FlowerTextBox({
 function TempleDecorations() {
   return (
     <>
+      {/* Floating circles and soft shapes moving around the image */}
       <motion.div
-        className="absolute -top-6 -right-6 w-36 h-36"
-        animate={{ rotate: 180, scale: [1, 1.05, 1] }}
+        className="absolute -top-4 -right-4 w-20 h-20 rounded-full border-2 border-accent/30"
+        animate={{
+          x: [0, 12, -8, 0],
+          y: [0, -10, 6, 0],
+          scale: [1, 1.1, 1],
+          rotate: [0, 90, 180],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/4 -right-8 w-12 h-12 rounded-full bg-primary/20"
+        animate={{
+          x: [0, -15, 8, 0],
+          y: [0, 8, -12, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-accent/15"
+        animate={{
+          x: [0, 20, -10, 0],
+          y: [0, -15, 10, 0],
+          scale: [1, 1.15, 1],
+          rotate: [0, -45, 0],
+        }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/3 -left-4 w-8 h-8 rounded-full border border-accent/40"
+        animate={{
+          x: [0, 18, -6, 0],
+          y: [0, -8, 14, 0],
+          rotate: [0, 180, 360],
+        }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/2 -right-6 w-6 h-6 rounded-full bg-accent/25"
+        animate={{
+          x: [0, -12, 6, 0],
+          y: [0, 10, -6, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute -bottom-2 right-1/4 w-10 h-10 rounded-full border border-primary/30"
+        animate={{
+          x: [0, -8, 14, 0],
+          y: [0, 12, -8, 0],
+          rotate: [0, 120, 240],
+        }}
+        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/4 right-1/4 w-4 h-4 rounded-full bg-primary/30"
+        animate={{
+          x: [0, 10, -12, 0],
+          y: [0, -6, 8, 0],
+        }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/30">
-          <polygon points="50,5 95,50 50,95 5,50" fill="none" stroke="currentColor" strokeWidth="1.5" />
-          <polygon points="50,15 85,50 50,85 15,50" fill="none" stroke="currentColor" strokeWidth="1" />
-        </svg>
-      </motion.div>
+      />
       <motion.div
-        className="absolute -bottom-10 -left-8 w-32 h-32"
-        animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg viewBox="0 0 100 100" className="w-full h-full text-primary/25">
-          <path d="M50 10 L60 40 L95 40 L68 58 L78 90 L50 72 L22 90 L32 58 L5 40 L40 40 Z" fill="currentColor" opacity="0.5" />
-        </svg>
-      </motion.div>
+        className="absolute bottom-1/3 -left-2 w-5 h-5 rounded-full bg-accent/35"
+        animate={{
+          x: [0, -14, 7, 0],
+          y: [0, 7, -10, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Soft gambol / petal-like blob */}
       <motion.div
-        className="absolute top-1/3 -right-5 w-16 h-16"
-        animate={{ rotate: [0, 10, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/40">
-          <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" strokeWidth="2" transform="rotate(45 50 50)" />
-        </svg>
-      </motion.div>
-      <div className="absolute top-1/4 -left-4 w-3 h-3 rounded-full bg-accent/50" />
-      <div className="absolute -bottom-2 right-1/3 w-4 h-4 rounded-full bg-primary/30" />
+        className="absolute top-0 right-1/3 w-14 h-14 rounded-[60%_40%_50%_50%] bg-accent/20"
+        animate={{
+          x: [0, -10, 15, 0],
+          y: [0, 15, -8, 0],
+          scale: [1, 1.1, 1],
+          rotate: [0, 25, -15, 0],
+        }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 -right-2 w-16 h-16 rounded-[50%_50%_40%_60%] bg-primary/15"
+        animate={{
+          x: [0, 12, -18, 0],
+          y: [0, -10, 12, 0],
+          rotate: [0, -30, 20, 0],
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+      />
     </>
   );
 }
