@@ -41,6 +41,26 @@ The frontend uses path aliases:
 
 Current schema includes a basic users table with UUID primary keys.
 
+## Page Structure
+
+### Pages with Double Navbar
+- Home (/)
+- News (/news)
+- Blog (/blog)
+- Dhyanasthali (/dhyanasthali)
+- About Himalayan Meditation (/about-meditation)
+- About Gurudev (/about-gurudev)
+
+### Pages with Custom Headers (no double navbar)
+- Gurukarya (/gurukarya) - Sacred service opportunities
+- Sahitya (/sahitya) - Spiritual ecommerce store
+
+### Authentication Pages
+- Login (/login)
+- Signup (/signup)
+- Verify (/verify)
+- Profile (/profile)
+
 ### Storage Pattern
 The application uses an interface-based storage pattern (`IStorage`) in `server/storage.ts`, currently implemented with in-memory storage (`MemStorage`). This design allows easy swapping to database-backed storage.
 

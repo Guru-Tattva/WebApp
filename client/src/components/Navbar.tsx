@@ -30,7 +30,7 @@ export default function Navbar() {
 
   const primaryNavItems = [
     { label: "About GuruTattva", href: "#about" },
-    { label: "About Gurudev", href: "#gurudev" },
+    { label: "About Gurudev", href: "/about-gurudev", isRoute: true },
     { label: "Events", href: "#events" },
     { label: "News", href: "/news", isRoute: true },
     { label: "Himalayan Meditation", href: "/about-meditation", isRoute: true },
