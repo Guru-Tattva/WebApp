@@ -1,62 +1,67 @@
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { Heart, Brain, Sun, Moon, Leaf, Sparkles, Shield, Zap } from "lucide-react";
+import {
+  Sparkles,
+  Crown,
+  Globe,
+  Gift,
+  CircleCheck,
+  DoorOpen,
+  FlaskConical,
+} from "lucide-react";
 
-const benefits = [
+const peculiarities = [
   {
     id: 1,
-    icon: Heart,
-    title: "Inner Peace",
-    description: "Experience profound tranquility and emotional balance through ancient meditation techniques.",
+    icon: Sparkles,
+    title: "Anubhuti Based",
+    description: "Spiritual Experience Based Meditation. Self Realization through Inner Experience.",
     petalColor: "from-rose-400 to-pink-500",
   },
   {
     id: 2,
-    icon: Brain,
-    title: "Mental Clarity",
-    description: "Sharpen your focus and enhance cognitive abilities with regular practice.",
+    icon: Crown,
+    title: "Focuses on Sahasrar Chakra",
+    description: "Meditation begins only after one attains the state of thoughtlessness.",
     petalColor: "from-violet-400 to-purple-500",
   },
   {
     id: 3,
-    icon: Sun,
-    title: "Spiritual Awakening",
-    description: "Discover your true self and connect with the divine consciousness within.",
+    icon: Globe,
+    title: "No discrimination",
+    description:
+      'It is based on the concept of "Vasudhaiva Kutumbakam"—the entire world is one family. This can be achieved after practicing this Meditation.',
     petalColor: "from-amber-400 to-orange-500",
   },
   {
     id: 4,
-    icon: Moon,
-    title: "Stress Relief",
-    description: "Release accumulated stress and anxiety through deep relaxation techniques.",
-    petalColor: "from-indigo-400 to-blue-500",
-  },
-  {
-    id: 5,
-    icon: Leaf,
-    title: "Physical Wellness",
-    description: "Improve your overall health and vitality through mind-body harmony.",
+    icon: Gift,
+    title: "Invaluable",
+    description:
+      "Just as the air, water, sunlight are available freely and unconditionally to the entire mankind, similarly this priceless Himalayan Meditation is available to all without a charge.",
     petalColor: "from-emerald-400 to-green-500",
   },
   {
-    id: 6,
-    icon: Sparkles,
-    title: "Enhanced Creativity",
-    description: "Unlock your creative potential and innovative thinking abilities.",
-    petalColor: "from-yellow-400 to-amber-500",
-  },
-  {
-    id: 7,
-    icon: Shield,
-    title: "Emotional Resilience",
-    description: "Build inner strength to face life's challenges with grace and equanimity.",
+    id: 5,
+    icon: CircleCheck,
+    title: "Easy to follow",
+    description: "No complex techniques are involved in the process.",
     petalColor: "from-cyan-400 to-teal-500",
   },
   {
-    id: 8,
-    icon: Zap,
-    title: "Energy Boost",
-    description: "Revitalize your life force energy and experience renewed enthusiasm.",
+    id: 6,
+    icon: DoorOpen,
+    title: "No restrictions",
+    description:
+      "Whomsoever reaches the Guru's (Enlightened Master's) proximity becomes worthy of receiving their divine grace.",
+    petalColor: "from-indigo-400 to-blue-500",
+  },
+  {
+    id: 7,
+    icon: FlaskConical,
+    title: "Backed by Science",
+    description:
+      "A Meditation Method that is backed by Scientific research. A scientifically approved meditation technique.",
     petalColor: "from-red-400 to-rose-500",
   },
 ];
@@ -200,10 +205,10 @@ export default function BenefitsTimeline() {
             </svg>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Benefits of Himalayan Meditation
+            Peculiarities of Himalayan Meditation
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Transform your life with the eight-fold blessings of ancient wisdom
+            Discover what makes Himalayan Meditation unique
           </p>
         </motion.div>
 
@@ -228,16 +233,16 @@ export default function BenefitsTimeline() {
                 />
               </div>
 
-              {benefits.map((benefit, index) => (
+              {peculiarities.map((item, index) => (
                 <motion.div
-                  key={benefit.id}
+                  key={item.id}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
                   className={`relative flex items-start mb-12 ${
                     index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
-                  data-testid={`benefit-${benefit.id}`}
+                  data-testid={`peculiarity-${item.id}`}
                 >
                   <div className={`hidden md:block w-[calc(50%-2rem)] ${
                     index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
@@ -247,14 +252,14 @@ export default function BenefitsTimeline() {
                       transition={{ type: "spring", stiffness: 300 }}
                       className="inline-block p-6 rounded-2xl bg-gradient-to-br from-card via-card to-card/80 border border-card-border shadow-lg hover:shadow-xl transition-shadow"
                     >
-                      <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br ${benefit.petalColor} text-white mb-4 shadow-md`}>
-                        <benefit.icon className="h-7 w-7" />
+                      <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br ${item.petalColor} text-white mb-4 shadow-md`}>
+                        <item.icon className="h-7 w-7" />
                       </div>
                       <h3 className="text-xl font-semibold text-foreground mb-2">
-                        {benefit.title}
+                        {item.title}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        {benefit.description}
+                        {item.description}
                       </p>
                     </motion.div>
                   </div>
@@ -264,14 +269,14 @@ export default function BenefitsTimeline() {
                   </div>
 
                   <div className="md:hidden ml-16 p-5 rounded-2xl bg-gradient-to-br from-card via-card to-card/80 border border-card-border shadow-lg">
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${benefit.petalColor} text-white mb-3 shadow-md`}>
-                      <benefit.icon className="h-6 w-6" />
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${item.petalColor} text-white mb-3 shadow-md`}>
+                      <item.icon className="h-6 w-6" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {benefit.title}
+                      {item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      {benefit.description}
+                      {item.description}
                     </p>
                   </div>
 
@@ -298,7 +303,7 @@ export default function BenefitsTimeline() {
             >
               ↓
             </motion.span>
-            <span>Scroll to explore all benefits</span>
+            <span>Scroll to explore all peculiarities</span>
             <motion.span
               animate={{ y: [0, 4, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
