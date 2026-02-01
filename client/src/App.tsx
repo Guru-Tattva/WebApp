@@ -3,7 +3,16 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { AuthProvider } from "@/lib/authContext";
 import Home from "@/pages/Home";
+import News from "@/pages/News";
+import Blog from "@/pages/Blog";
+import Dhyanasthali from "@/pages/Dhyanasthali";
+import Sahitya from "@/pages/Sahitya";
+import Login from "@/pages/Login";
+import Signup from "@/pages/Signup";
+import Verify from "@/pages/Verify";
+import Profile from "@/pages/Profile";
 import FindCenter from "@/pages/FindCenter";
 import NotFound from "@/pages/not-found";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -12,6 +21,14 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/news" component={News} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/dhyanasthali" component={Dhyanasthali} />
+      <Route path="/sahitya" component={Sahitya} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/verify" component={Verify} />
+      <Route path="/profile" component={Profile} />
       <Route path="/find-center" component={FindCenter} />
       <Route component={NotFound} />
     </Switch>
@@ -21,11 +38,13 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ParticlesBackground />
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <ParticlesBackground />
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

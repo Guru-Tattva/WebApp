@@ -6,6 +6,7 @@ import BenefitsTimeline from "@/components/BenefitsTimeline";
 import EventsSection from "@/components/EventsSection";
 import DonateSection from "@/components/DonateSection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <DonateSection />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
