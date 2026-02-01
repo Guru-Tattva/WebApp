@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const primaryNavItems = [
-    { label: "About GuruTattva", href: "#about" },
+    { label: "About GuruTattva", href: "/about-gurutattva", isRoute: true },
     { label: "About Gurudev", href: "/about-gurudev", isRoute: true },
     { label: "Events", href: "#events" },
     { label: "News", href: "/news", isRoute: true },

@@ -12,6 +12,7 @@ import Sahitya from "@/pages/Sahitya";
 import Gurukarya from "@/pages/Gurukarya";
 import AboutMeditation from "@/pages/AboutMeditation";
 import AboutGurudev from "@/pages/AboutGurudev";
+import AboutGuruTattva from "@/pages/AboutGuruTattva";
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import Verify from "@/pages/Verify";
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/gurukarya" component={Gurukarya} />
       <Route path="/about-meditation" component={AboutMeditation} />
       <Route path="/about-gurudev" component={AboutGurudev} />
+      <Route path="/about-gurutattva" component={AboutGuruTattva} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/verify" component={Verify} />
