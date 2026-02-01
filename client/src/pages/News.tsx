@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 interface NewsItem {
@@ -315,7 +316,7 @@ export default function News() {
           </aside>
         </div>
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );

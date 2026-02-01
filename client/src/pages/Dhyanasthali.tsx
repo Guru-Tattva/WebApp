@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 interface Facility {
@@ -579,7 +580,7 @@ export default function Dhyanasthali() {
           </div>
         )}
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );

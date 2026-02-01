@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import logoImage from "@assets/Gurutattva-Logo-Regi_1769940433810.png";
 
 interface Gurukarya {
@@ -534,7 +535,7 @@ export default function Gurukarya() {
           </div>
         )}
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );

@@ -25,6 +25,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/lib/authContext";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import logoImage from "@assets/Gurutattva-Logo-Regi_1769940433810.png";
 
 const recentActivity = [
@@ -384,7 +385,7 @@ export default function Profile() {
           </TabsContent>
         </Tabs>
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );

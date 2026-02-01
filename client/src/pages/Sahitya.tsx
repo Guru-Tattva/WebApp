@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import logoImage from "@assets/Gurutattva-Logo-Regi_1769940433810.png";
 
 interface Product {
@@ -454,7 +455,7 @@ export default function Sahitya() {
           </div>
         )}
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 interface BlogPost {
@@ -254,7 +255,7 @@ export default function Blog() {
           </main>
         </div>
       </div>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );
