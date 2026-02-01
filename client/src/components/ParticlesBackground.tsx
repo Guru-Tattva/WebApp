@@ -28,51 +28,51 @@ export default function ParticlesBackground() {
       fpsLimit: 60,
       particles: {
         color: {
-          value: ["#a78bab", "#d4a574", "#c9b8c4"],
+          value: ["#b8736b", "#8b7355", "#9a7b7b"],
         },
         links: {
-          enable: false,
+          enable: true,
+          color: "rgba(184, 115, 107, 0.35)",
+          distance: 100,
+          width: 0.6,
+          opacity: 0.22,
         },
         move: {
           direction: "none" as const,
           enable: true,
           outModes: {
-            default: "bounce" as const,
+            default: "out" as const,
           },
           random: true,
-          speed: 0.5,
+          speed: 0.4,
           straight: false,
         },
         number: {
           density: {
             enable: true,
+            width: 1920,
+            height: 1080,
           },
-          value: 40,
+          value: 32,
         },
         opacity: {
-          value: { min: 0.1, max: 0.4 },
+          value: { min: 0.2, max: 0.42 },
           animation: {
             enable: true,
-            speed: 0.5,
+            speed: 1.5,
             sync: false,
+            minimumValue: 0.15,
           },
         },
         shape: {
-          type: ["circle", "star"],
+          type: "circle",
         },
         size: {
-          value: { min: 2, max: 6 },
-          animation: {
-            enable: true,
-            speed: 1,
-            sync: false,
-          },
+          value: { min: 2, max: 5 },
         },
         twinkle: {
           particles: {
-            enable: true,
-            frequency: 0.03,
-            opacity: 0.8,
+            enable: false,
           },
         },
       },
