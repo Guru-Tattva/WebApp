@@ -51,6 +51,7 @@ Current schema includes a basic users table with UUID primary keys.
 - About Himalayan Meditation (/about-meditation)
 - About Gurudev (/about-gurudev)
 - About GuruTattva (/about-gurutattva)
+- Management (/management) - Teams, departments, and member details
 
 ### Pages with Custom Headers (no double navbar)
 - Gurukarya (/gurukarya) - Sacred service opportunities

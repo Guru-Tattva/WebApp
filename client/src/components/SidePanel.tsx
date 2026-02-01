@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { User, Phone, FlaskConical, Bell, Award, Image, Heart } from "lucide-react";
+import { User, Phone, FlaskConical, Bell, Award, Image, Heart, Users } from "lucide-react";
 
 interface SidePanelProps {
   isOpen: boolean;
@@ -7,6 +7,7 @@ interface SidePanelProps {
 
 const menuItems = [
   { icon: User, label: "Your Profile", labelHindi: "प्रोफाइल", href: "/profile" },
+  { icon: Users, label: "Management", labelHindi: "प्रबंधन", href: "/management" },
   { icon: Phone, label: "Sampark", labelHindi: "संपर्क", href: "/contact" },
   { icon: FlaskConical, label: "Vigyan", labelHindi: "विज्ञान", href: "/science" },
   { icon: Bell, label: "Suchna", labelHindi: "सूचना", href: "/updates" },
