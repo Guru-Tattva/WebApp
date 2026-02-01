@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE - GuruTattva Spiritual Theme (60:30:10 Rule)
-   60% - Soft ivory/cream background
-   30% - Dusty lavender/sage secondary
-   10% - Rose gold/soft gold accent
+/* LIGHT MODE - GuruTattva Elegant Spiritual Theme (60:30:10 Rule)
+   60% - Warm cream/champagne backgrounds
+   30% - Deep teal/forest green secondary
+   10% - Soft gold/amber accent
 */
 :root {
   --button-outline: rgba(0,0,0, .10);
@@ -13,43 +13,43 @@
   --opaque-button-border-intensity: -8;
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
-  /* 60% - Soft ivory/cream tones */
-  --background: 40 40% 97%;
-  --foreground: 280 15% 20%;
-  --border: 40 20% 88%;
-  --card: 40 35% 95%;
-  --card-foreground: 280 15% 20%;
-  --card-border: 40 25% 88%;
-  --sidebar: 280 12% 96%;
-  --sidebar-foreground: 280 15% 20%;
-  --sidebar-border: 280 12% 88%;
-  /* 30% - Dusty lavender purple */
-  --sidebar-primary: 280 35% 55%;
+  /* 60% - Warm cream/champagne backgrounds */
+  --background: 45 35% 96%;
+  --foreground: 160 25% 15%;
+  --border: 45 20% 88%;
+  --card: 45 30% 98%;
+  --card-foreground: 160 25% 15%;
+  --card-border: 45 20% 88%;
+  --sidebar: 160 15% 97%;
+  --sidebar-foreground: 160 25% 15%;
+  --sidebar-border: 160 12% 88%;
+  /* 30% - Deep teal/forest green */
+  --sidebar-primary: 168 45% 35%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 280 18% 90%;
-  --sidebar-accent-foreground: 280 15% 20%;
-  --sidebar-ring: 280 35% 55%;
-  --popover: 40 35% 96%;
-  --popover-foreground: 280 15% 20%;
-  --popover-border: 40 25% 88%;
-  --primary: 280 35% 55%;
+  --sidebar-accent: 168 20% 92%;
+  --sidebar-accent-foreground: 160 25% 15%;
+  --sidebar-ring: 168 45% 35%;
+  --popover: 45 30% 98%;
+  --popover-foreground: 160 25% 15%;
+  --popover-border: 45 20% 88%;
+  --primary: 168 45% 35%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 280 20% 75%;
-  --secondary-foreground: 280 25% 25%;
-  --muted: 40 20% 92%;
-  --muted-foreground: 280 10% 45%;
-  /* 10% - Rose gold/soft gold accent */
-  --accent: 25 65% 60%;
-  --accent-foreground: 25 40% 15%;
+  --secondary: 168 20% 80%;
+  --secondary-foreground: 168 30% 20%;
+  --muted: 45 15% 92%;
+  --muted-foreground: 160 12% 45%;
+  /* 10% - Soft gold/amber accent */
+  --accent: 38 70% 50%;
+  --accent-foreground: 38 50% 10%;
   --destructive: 0 65% 50%;
   --destructive-foreground: 0 65% 98%;
-  --input: 40 18% 80%;
-  --ring: 280 35% 55%;
-  --chart-1: 280 35% 55%;
-  --chart-2: 25 65% 60%;
-  --chart-3: 40 40% 65%;
+  --input: 45 15% 82%;
+  --ring: 168 45% 35%;
+  --chart-1: 168 45% 40%;
+  --chart-2: 38 70% 55%;
+  --chart-3: 45 40% 60%;
   --chart-4: 200 50% 55%;
-  --chart-5: 340 45% 60%;
+  --chart-5: 340 45% 55%;
   --font-sans: 'Poppins', sans-serif;
   --font-serif: 'Playfair Display', serif;
   --font-mono: Menlo, monospace;
@@ -100,43 +100,43 @@
   --opaque-button-border-intensity: 9;
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
-  /* 60% - Deep midnight/charcoal */
-  --background: 280 12% 8%;
-  --foreground: 40 25% 95%;
-  --border: 280 12% 18%;
-  --card: 280 12% 12%;
-  --card-foreground: 40 25% 95%;
-  --card-border: 280 12% 18%;
-  --sidebar: 280 15% 10%;
-  --sidebar-foreground: 40 25% 95%;
-  --sidebar-border: 280 12% 15%;
-  /* 30% - Dusty lavender purple */
-  --sidebar-primary: 280 40% 60%;
+  /* 60% - Deep forest/charcoal */
+  --background: 160 20% 8%;
+  --foreground: 45 30% 95%;
+  --border: 160 15% 18%;
+  --card: 160 18% 12%;
+  --card-foreground: 45 30% 95%;
+  --card-border: 160 15% 18%;
+  --sidebar: 160 20% 10%;
+  --sidebar-foreground: 45 30% 95%;
+  --sidebar-border: 160 15% 15%;
+  /* 30% - Teal/emerald green */
+  --sidebar-primary: 168 50% 45%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 280 18% 20%;
-  --sidebar-accent-foreground: 40 25% 95%;
-  --sidebar-ring: 280 40% 60%;
-  --popover: 280 12% 14%;
-  --popover-foreground: 40 25% 95%;
-  --popover-border: 280 12% 20%;
-  --primary: 280 40% 60%;
+  --sidebar-accent: 168 20% 20%;
+  --sidebar-accent-foreground: 45 30% 95%;
+  --sidebar-ring: 168 50% 45%;
+  --popover: 160 18% 14%;
+  --popover-foreground: 45 30% 95%;
+  --popover-border: 160 15% 20%;
+  --primary: 168 50% 45%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 280 22% 35%;
-  --secondary-foreground: 280 15% 90%;
-  --muted: 280 10% 20%;
-  --muted-foreground: 40 15% 60%;
-  /* 10% - Rose gold accent */
-  --accent: 25 60% 55%;
-  --accent-foreground: 25 40% 10%;
+  --secondary: 168 25% 30%;
+  --secondary-foreground: 168 15% 90%;
+  --muted: 160 12% 18%;
+  --muted-foreground: 45 20% 60%;
+  /* 10% - Soft gold accent */
+  --accent: 38 65% 50%;
+  --accent-foreground: 38 50% 10%;
   --destructive: 0 60% 45%;
   --destructive-foreground: 0 60% 98%;
-  --input: 280 10% 25%;
-  --ring: 280 40% 60%;
-  --chart-1: 280 40% 65%;
-  --chart-2: 25 60% 60%;
-  --chart-3: 40 35% 60%;
+  --input: 160 12% 22%;
+  --ring: 168 50% 45%;
+  --chart-1: 168 50% 50%;
+  --chart-2: 38 65% 55%;
+  --chart-3: 45 35% 55%;
   --chart-4: 200 50% 60%;
-  --chart-5: 340 50% 60%;
+  --chart-5: 340 50% 55%;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
