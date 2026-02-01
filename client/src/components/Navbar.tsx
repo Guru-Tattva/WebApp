@@ -30,6 +30,7 @@ export default function Navbar() {
 
   const primaryNavItems = [
     { label: "What is GuruTattva?", href: "#about" },
+    { label: "Gurukarya", href: "/gurukarya", isRoute: true },
     { label: "Events", href: "#events" },
     { label: "News", href: "/news", isRoute: true },
   ];

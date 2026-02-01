@@ -9,6 +9,7 @@ import News from "@/pages/News";
 import Blog from "@/pages/Blog";
 import Dhyanasthali from "@/pages/Dhyanasthali";
 import Sahitya from "@/pages/Sahitya";
+import Gurukarya from "@/pages/Gurukarya";
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import Verify from "@/pages/Verify";
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/dhyanasthali" component={Dhyanasthali} />
       <Route path="/sahitya" component={Sahitya} />
+      <Route path="/gurukarya" component={Gurukarya} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/verify" component={Verify} />

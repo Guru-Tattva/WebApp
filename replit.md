@@ -16,7 +16,7 @@ Preferred communication style: Simple, everyday language.
 - **Framework**: React 18 with TypeScript
 - **Routing**: Wouter (lightweight React router)
 - **State Management**: TanStack React Query for server state
-- **Styling**: Tailwind CSS with custom spiritual theme (purple/gold color palette)
+- **Styling**: Tailwind CSS with Aboli theme (warm peachy-pink #E69E8F with Deep Teal accents)
 - **UI Components**: shadcn/ui component library built on Radix UI primitives
 - **Animations**: Framer Motion for page transitions and micro-interactions
 - **Build Tool**: Vite with React plugin
