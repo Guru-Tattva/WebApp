@@ -29,17 +29,18 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const primaryNavItems = [
-    { label: "What is GuruTattva?", href: "#about" },
-    { label: "Gurukarya", href: "/gurukarya", isRoute: true },
+    { label: "About GuruTattva", href: "#about" },
+    { label: "About Gurudev", href: "#gurudev" },
     { label: "Events", href: "#events" },
     { label: "News", href: "/news", isRoute: true },
+    { label: "About Himalaya Meditation", href: "#himalayan-meditation" },
   ];
 
   const secondaryNavItems = [
     { label: "Dhyanasthali", href: "/dhyanasthali", isRoute: true },
     { label: "Sahitya", href: "/sahitya", isRoute: true },
     { label: "Blogs", href: "/blog", isRoute: true },
-    { label: "Gurudev", href: "#gurudev" },
+    { label: "Gurukarya", href: "/gurukarya", isRoute: true },
   ];
 
   return (
