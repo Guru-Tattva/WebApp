@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Link } from "wouter";
-import { ArrowLeft, Search, BookOpen, Clock, User, Tag } from "lucide-react";
+import { Search, BookOpen, Clock, User, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
-import logoImage from "@assets/Gurutattva-Logo-Regi_1769940433810.png";
+import Navbar from "@/components/Navbar";
 
 interface BlogPost {
   id: string;
@@ -121,31 +120,18 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 gradient-header border-b border-primary/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-4">
-              <Link href="/">
-                <Button variant="ghost" size="icon" className="text-white/90 hover:text-white hover:bg-white/10" data-testid="button-back-home">
-                  <ArrowLeft className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/">
-                <img src={logoImage} alt="GuruTattva" className="h-8 w-auto cursor-pointer brightness-0 invert" data-testid="img-blog-logo" />
-              </Link>
-            </div>
-            <div className="flex items-center gap-2">
-              <BookOpen className="h-5 w-5 text-white/80" />
-              <h1 className="text-xl font-serif font-semibold text-white" data-testid="text-blog-title">
-                Spiritual Insights
-              </h1>
-            </div>
-            <div className="w-20" />
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-32">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <BookOpen className="h-6 w-6 text-primary" />
+            <h1 className="text-3xl font-serif font-bold text-foreground" data-testid="text-blog-title">
+              Spiritual Insights
+            </h1>
+          </div>
+          <p className="text-muted-foreground">Wisdom and teachings from the Himalayan tradition</p>
+        </div>
         <div className="relative max-w-xl mx-auto mb-8">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input

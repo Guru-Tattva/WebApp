@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { ArrowLeft, MapPin, Home, UtensilsCrossed, Building, Calendar, Users, Phone, Mail, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
-import logoImage from "@assets/Gurutattva-Logo-Regi_1769940433810.png";
+import Navbar from "@/components/Navbar";
 
 interface Facility {
   name: string;
@@ -426,31 +426,9 @@ export default function Dhyanasthali() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 gradient-header border-b border-primary/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-4">
-              <Link href="/">
-                <Button variant="ghost" size="icon" className="text-white/90 hover:text-white hover:bg-white/10" data-testid="button-back-home">
-                  <ArrowLeft className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/">
-                <img src={logoImage} alt="GuruTattva" className="h-8 w-auto cursor-pointer brightness-0 invert" data-testid="img-dhyanasthali-logo" />
-              </Link>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-5 w-5 text-white/80" />
-              <h1 className="text-xl font-serif font-semibold text-white" data-testid="text-dhyanasthali-title">
-                Dhyanasthali Centers
-              </h1>
-            </div>
-            <div className="w-20" />
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-32">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
             {isOutOfIndia

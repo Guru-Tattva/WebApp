@@ -1,10 +1,10 @@
 import { Link } from "wouter";
-import { ArrowLeft, Heart, Brain, Shield, Sparkles, Users, Globe, Play, MapPin, Phone } from "lucide-react";
+import { Heart, Brain, Shield, Sparkles, Users, Globe, Play, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
-import logoImage from "@assets/Gurutattva-Logo-Regi_1769940433810.png";
+import Navbar from "@/components/Navbar";
 import heroImage from "@assets/image_1769956160033.png";
 import chittaImage from "@assets/image_1769956334823.png";
 import dropAnalogy from "@assets/image_1769956355239.png";
@@ -95,28 +95,9 @@ const recognitions = [
 export default function AboutMeditation() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 gradient-header border-b border-primary/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-4">
-              <Link href="/">
-                <Button variant="ghost" size="icon" className="text-white/90 hover:text-white hover:bg-white/10" data-testid="button-back-home">
-                  <ArrowLeft className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/">
-                <img src={logoImage} alt="GuruTattva" className="h-8 w-auto cursor-pointer brightness-0 invert" data-testid="img-about-logo" />
-              </Link>
-            </div>
-            <h1 className="text-xl font-serif font-semibold text-white" data-testid="text-about-title">
-              Himalayan Meditation
-            </h1>
-            <div className="w-20" />
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
-      <main>
+      <main className="pt-28">
         <section className="relative">
           <div className="w-full">
             <img 
