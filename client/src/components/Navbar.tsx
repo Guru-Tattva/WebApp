@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { Menu, User, LogIn, LogOut, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,26 +7,43 @@ import SidePanel from "./SidePanel";
 import NotificationDropdown from "./NotificationDropdown";
 import { useAuth } from "@/lib/authContext";
 
+const SCROLL_THRESHOLD_PX = 50;
+
 export default function Navbar() {
   const [showSecondNav, setShowSecondNav] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const { isLoggedIn, logout } = useAuth();
+  const lastScrollY = useRef(0);
+  const accumulatedDown = useRef(0);
+  const accumulatedUp = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowSecondNav(false);
-      } else if (currentScrollY < lastScrollY) {
-        setShowSecondNav(true);
+      const delta = currentScrollY - lastScrollY.current;
+
+      if (delta > 0) {
+        accumulatedDown.current += delta;
+        accumulatedUp.current = 0;
+        if (accumulatedDown.current >= SCROLL_THRESHOLD_PX) {
+          setShowSecondNav(false);
+          accumulatedDown.current = 0;
+        }
+      } else if (delta < 0) {
+        accumulatedUp.current += -delta;
+        accumulatedDown.current = 0;
+        if (accumulatedUp.current >= SCROLL_THRESHOLD_PX) {
+          setShowSecondNav(true);
+          accumulatedUp.current = 0;
+        }
       }
-      setLastScrollY(currentScrollY);
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const primaryNavItems = [
     { label: "About GuruTattva", href: "/about-gurutattva", isRoute: true },
