@@ -4,6 +4,7 @@ import { ArrowLeft, MapPin, Home, UtensilsCrossed, Building, Calendar, Users, Ph
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -32,7 +33,7 @@ interface Dhyanasthali {
   capacity: number;
 }
 
-const dhyanasthalis: Dhyanasthali[] = [
+const dhyanasthalisIndia: Dhyanasthali[] = [
   {
     id: "1",
     name: "Rishikesh Dhyanasthali",
@@ -163,6 +164,137 @@ const dhyanasthalis: Dhyanasthali[] = [
   },
 ];
 
+const dhyanasthalisOutOfIndia: Dhyanasthali[] = [
+  {
+    id: "9",
+    name: "USA Dhyanasthali",
+    location: "California",
+    state: "United States",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    description: "Our center in the United States brings Himalayan Meditation to the West, offering retreats and regular practice in a serene environment.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Meditation hall for collective practice", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Sattvic vegetarian meals", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Accommodation for visiting sadhaks", available: true },
+    ],
+    contactPhone: "+1 555 012 3456",
+    contactEmail: "usa@gurutattva.org",
+    capacity: 100,
+  },
+  {
+    id: "10",
+    name: "UK Dhyanasthali",
+    location: "London",
+    state: "United Kingdom",
+    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800",
+    description: "In the heart of London, experience the peace of Himalayan Meditation amid the city's spiritual community.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Meditation and satsang space", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Vegetarian meals on retreat days", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Limited stay facilities", available: true },
+    ],
+    contactPhone: "+44 20 7946 0958",
+    contactEmail: "uk@gurutattva.org",
+    capacity: 60,
+  },
+  {
+    id: "11",
+    name: "UAE Dhyanasthali",
+    location: "Dubai",
+    state: "United Arab Emirates",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800",
+    description: "A sanctuary in the Gulf where seekers from the region gather for meditation and spiritual growth.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Air-conditioned meditation hall", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Sattvic meals for programs", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Guest accommodation", available: true },
+    ],
+    contactPhone: "+971 4 123 4567",
+    contactEmail: "uae@gurutattva.org",
+    capacity: 80,
+  },
+  {
+    id: "12",
+    name: "Australia Dhyanasthali",
+    location: "Sydney",
+    state: "Australia",
+    image: "https://images.unsplash.com/photo-1523482580671-f216b8e6a96e?w=800",
+    description: "Down under, our Australian center offers regular meditation sessions and retreats in the Himalayan tradition.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Peaceful meditation space", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Vegetarian catering for events", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Retreat accommodation", available: true },
+    ],
+    contactPhone: "+61 2 1234 5678",
+    contactEmail: "australia@gurutattva.org",
+    capacity: 70,
+  },
+  {
+    id: "13",
+    name: "Canada Dhyanasthali",
+    location: "Toronto",
+    state: "Canada",
+    image: "https://images.unsplash.com/photo-1519832979-6fa011b87667?w=800",
+    description: "Canadian seekers find a home for Himalayan Meditation practice and community satsangs.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Meditation hall and program space", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Sattvic meals during retreats", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Lodging for retreat participants", available: true },
+    ],
+    contactPhone: "+1 416 555 0123",
+    contactEmail: "canada@gurutattva.org",
+    capacity: 65,
+  },
+  {
+    id: "14",
+    name: "Singapore Dhyanasthali",
+    location: "Singapore",
+    state: "Singapore",
+    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800",
+    description: "In multicultural Singapore, our center serves as a hub for meditation and spiritual gatherings in Asia.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Central meditation and event space", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Vegetarian meals for programs", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Short-stay facilities", available: false },
+    ],
+    contactPhone: "+65 6123 4567",
+    contactEmail: "singapore@gurutattva.org",
+    capacity: 50,
+  },
+  {
+    id: "15",
+    name: "Germany Dhyanasthali",
+    location: "Berlin",
+    state: "Germany",
+    image: "https://images.unsplash.com/photo-1560930950-5cc20e80e392?w=800",
+    description: "European seekers gather at our German center for meditation courses and retreats in the Himalayan tradition.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Meditation hall and workshop space", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Sattvic vegetarian cuisine", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Retreat accommodation", available: true },
+    ],
+    contactPhone: "+49 30 12345678",
+    contactEmail: "germany@gurutattva.org",
+    capacity: 55,
+  },
+  {
+    id: "16",
+    name: "Mauritius Dhyanasthali",
+    location: "Port Louis",
+    state: "Mauritius",
+    image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800",
+    description: "On the island of Mauritius, find peace by the ocean with regular meditation and spiritual programs.",
+    facilities: [
+      { name: "Gurushakti Dham", icon: Home, description: "Meditation hall with natural light", available: true },
+      { name: "Bhojanshala", icon: UtensilsCrossed, description: "Local sattvic meals", available: true },
+      { name: "Sadhak Nivas", icon: Building, description: "Guest rooms for retreats", available: true },
+    ],
+    contactPhone: "+230 5 123 4567",
+    contactEmail: "mauritius@gurutattva.org",
+    capacity: 45,
+  },
+];
+
 function BookingDialog({ dhyanasthali }: { dhyanasthali: Dhyanasthali }) {
   const [, setLocation] = useLocation();
   const [formData, setFormData] = useState({
@@ -283,6 +415,14 @@ function BookingDialog({ dhyanasthali }: { dhyanasthali: Dhyanasthali }) {
 
 export default function Dhyanasthali() {
   const [selectedDhyanasthali, setSelectedDhyanasthali] = useState<Dhyanasthali | null>(null);
+  const [isOutOfIndia, setIsOutOfIndia] = useState(false);
+
+  const dhyanasthalis = isOutOfIndia ? dhyanasthalisOutOfIndia : dhyanasthalisIndia;
+
+  const handleRegionChange = (checked: boolean) => {
+    setIsOutOfIndia(checked);
+    setSelectedDhyanasthali(null);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -311,14 +451,31 @@ export default function Dhyanasthali() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
-            Sacred Meditation Centers Across India
+            {isOutOfIndia
+              ? "Sacred Meditation Centers Around the World"
+              : "Sacred Meditation Centers Across India"}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Experience the divine presence at our 8 dhyanasthalis, each offering unique spiritual
-            environments and facilities for your meditation journey.
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+            {isOutOfIndia
+              ? "Experience the divine presence at our 8 international dhyanasthalis, each offering unique spiritual environments for your meditation journey."
+              : "Experience the divine presence at our 8 dhyanasthalis in India, each offering unique spiritual environments and facilities for your meditation journey."}
           </p>
+          <div className="inline-flex items-center gap-3 rounded-full border border-primary/30 bg-card/50 px-4 py-2 shadow-sm" data-testid="region-switch">
+            <span className={`text-sm font-medium ${!isOutOfIndia ? "text-primary" : "text-muted-foreground"}`}>
+              India
+            </span>
+            <Switch
+              checked={isOutOfIndia}
+              onCheckedChange={handleRegionChange}
+              aria-label="Switch between India and Out of India centers"
+              data-testid="switch-region"
+            />
+            <span className={`text-sm font-medium ${isOutOfIndia ? "text-primary" : "text-muted-foreground"}`}>
+              Out of India
+            </span>
+          </div>
         </div>
 
         {selectedDhyanasthali ? (
