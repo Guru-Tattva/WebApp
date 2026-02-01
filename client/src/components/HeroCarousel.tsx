@@ -1,54 +1,38 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Sun, Heart, Sparkles, Flower2, Cloud } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sun, Heart, Sparkles, Flower2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import heroMeditation from "@assets/hero-meditation.png";
-import heroGuru from "@assets/hero-guru.png";
-import heroTemple from "@assets/hero-temple.png";
+const HERO_GURUDEV_IMAGE = "/hero-gurudev.png";
 
 const slides = [
   {
     id: 1,
-    title: "Spiritual Awakening",
-    description:
-      "Discover your true self and connect with the divine consciousness within.",
-    cta1: "Start Your Journey",
-    cta2: "Learn More",
-    image: heroMeditation,
-    decorations: "meditation",
+    title: "Himalayan Meditation",
+    description: "800 Years old Yogic Sanskaar from Himalayas",
+    cta1: "Find Near You",
+    cta2: "Virtual Tour",
     icon: Sun,
   },
   {
     id: 2,
-    title: "Divine Connection",
-    description:
-      "Experience the profound peace and love that flows from within your heart center.",
-    cta1: "Know Gurudev",
-    cta2: "His Teachings",
-    image: heroGuru,
-    decorations: "guru",
+    title: "GuruTattva",
+    description: "A global Platform for Spiritual Awakening",
+    cta1: "Find Near You",
+    cta2: "Virtual Tour",
     icon: Heart,
   },
   {
     id: 3,
-    title: "Sacred Transformation",
+    title: "Param Pujya Shree Shivkrupanand Swamiji",
     description:
-      "Embrace the light of wisdom and transform your life through ancient practices.",
+      "The unceasing saga of the expansion of global consciousness from the caves of the Himalayas",
     cta1: "Find Near You",
     cta2: "Virtual Tour",
-    image: heroTemple,
-    decorations: "temple",
     icon: Sparkles,
   },
 ];
 
-const thoughtCloudContent = [
-  { id: 1, thought: "In silence, the soul finds its voice.", icon: Flower2 },
-  { id: 2, thought: "Peace begins with a single breath.", icon: Cloud },
-  { id: 3, thought: "Your inner light guides the way.", icon: Sun },
-  { id: 4, thought: "Love is the essence of all being.", icon: Heart },
-  { id: 5, thought: "Stillness reveals infinite wisdom.", icon: Sparkles },
-];
+const thoughtCloud = { thought: "In silence, the soul finds its voice.", icon: Flower2 };
 
 function ThoughtCloud({ thought, icon: Icon }: { thought: string; icon: typeof Sun }) {
   return (
@@ -131,78 +115,6 @@ function FlowerTextBox({
   );
 }
 
-function MeditationDecorations() {
-  return (
-    <>
-      <motion.div
-        className="absolute -top-8 -right-8 w-32 h-32"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      >
-        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/40">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="8 4" />
-          <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 3" />
-        </svg>
-      </motion.div>
-      <motion.div
-        className="absolute -bottom-6 -left-6 w-24 h-24"
-        animate={{ y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg viewBox="0 0 100 100" className="w-full h-full text-primary/30">
-          <path d="M50 10 C30 30, 10 50, 50 90 C90 50, 70 30, 50 10" fill="currentColor" />
-        </svg>
-      </motion.div>
-      <motion.div
-        className="absolute top-1/2 -right-4 w-16 h-16"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-accent/40 to-primary/20" />
-      </motion.div>
-      <div className="absolute -top-4 left-1/4 w-3 h-3 rounded-full bg-accent/50" />
-      <div className="absolute bottom-1/4 -right-2 w-2 h-2 rounded-full bg-primary/40" />
-    </>
-  );
-}
-
-function GuruDecorations() {
-  return (
-    <>
-      <motion.div
-        className="absolute -top-10 -left-10 w-40 h-40"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-      >
-        <svg viewBox="0 0 100 100" className="w-full h-full text-primary/25">
-          <path d="M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z" fill="currentColor" />
-        </svg>
-      </motion.div>
-      <motion.div
-        className="absolute -bottom-8 -right-8 w-28 h-28"
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg viewBox="0 0 100 100" className="w-full h-full text-accent/35">
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" />
-          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1.5" />
-          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="1" />
-          <circle cx="50" cy="50" r="8" fill="currentColor" />
-        </svg>
-      </motion.div>
-      <motion.div
-        className="absolute top-1/4 -left-6 w-12 h-12"
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="w-full h-full rounded-full border-2 border-primary/30" />
-      </motion.div>
-      <div className="absolute -top-2 right-1/4 w-4 h-4 rounded-full bg-accent/40" />
-      <div className="absolute bottom-1/3 -left-3 w-2 h-2 rounded-full bg-primary/30" />
-    </>
-  );
-}
-
 function TempleDecorations() {
   return (
     <>
@@ -240,22 +152,8 @@ function TempleDecorations() {
   );
 }
 
-function DecorationWrapper({ type }: { type: string }) {
-  switch (type) {
-    case "meditation":
-      return <MeditationDecorations />;
-    case "guru":
-      return <GuruDecorations />;
-    case "temple":
-      return <TempleDecorations />;
-    default:
-      return null;
-  }
-}
-
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentThought, setCurrentThought] = useState(0);
   const slideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const resetSlideTimer = useCallback(() => {
@@ -275,13 +173,6 @@ export default function HeroCarousel() {
       }
     };
   }, [resetSlideTimer]);
-
-  useEffect(() => {
-    const thoughtTimer = setInterval(() => {
-      setCurrentThought((prev) => (prev + 1) % thoughtCloudContent.length);
-    }, 5000);
-    return () => clearInterval(thoughtTimer);
-  }, []);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -306,78 +197,77 @@ export default function HeroCarousel() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
-            className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[65vh]"
-          >
-            <div className="order-2 lg:order-1 space-y-8">
-              <FlowerTextBox
-                title={slides[currentSlide].title}
-                description={slides[currentSlide].description}
-                icon={slides[currentSlide].icon}
-              />
-
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[65vh]">
+          <div className="order-2 lg:order-1 space-y-8">
+            <AnimatePresence mode="wait">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-wrap gap-4 justify-center lg:justify-start"
+                key={currentSlide}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.5 }}
+                className="space-y-8"
               >
-                <Button
-                  size="lg"
-                  className="bg-primary text-primary-foreground border-primary-border px-8"
-                  data-testid="button-hero-cta-primary"
+                <FlowerTextBox
+                  title={slides[currentSlide].title}
+                  description={slides[currentSlide].description}
+                  icon={slides[currentSlide].icon}
+                />
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex flex-wrap gap-4 justify-center lg:justify-start"
                 >
-                  {slides[currentSlide].cta1}
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary text-primary"
-                  data-testid="button-hero-cta-secondary"
-                >
-                  {slides[currentSlide].cta2}
-                </Button>
+                  <Button
+                    size="lg"
+                    className="bg-primary text-primary-foreground border-primary-border px-8"
+                    data-testid="button-hero-cta-primary"
+                  >
+                    {slides[currentSlide].cta1}
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-primary text-primary"
+                    data-testid="button-hero-cta-secondary"
+                  >
+                    {slides[currentSlide].cta2}
+                  </Button>
+                </motion.div>
               </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="order-1 lg:order-2 relative"
+          >
+            <div className="flex justify-center mb-4" data-testid="thought-cloud-container">
+              <ThoughtCloud
+                thought={thoughtCloud.thought}
+                icon={thoughtCloud.icon}
+              />
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="order-1 lg:order-2 relative"
-            >
-              <div className="flex justify-center mb-4" data-testid="thought-cloud-container">
-                <AnimatePresence mode="wait">
-                  <ThoughtCloud
-                    key={currentThought}
-                    thought={thoughtCloudContent[currentThought].thought}
-                    icon={thoughtCloudContent[currentThought].icon}
-                  />
-                </AnimatePresence>
-              </div>
+            <div className="relative">
+              <TempleDecorations />
 
-              <div className="relative">
-                <DecorationWrapper type={slides[currentSlide].decorations} />
-                
-                <div className="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-card-border/50">
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent z-10" />
-                  <img
-                    src={slides[currentSlide].image}
-                    alt={slides[currentSlide].title}
-                    className="w-full h-full object-cover"
-                    data-testid={`img-hero-${currentSlide}`}
-                  />
-                </div>
+              <div className="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-card-border/50 bg-transparent">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent z-10 pointer-events-none" />
+                <img
+                  src={HERO_GURUDEV_IMAGE}
+                  alt="Param Pujya Shree Shivkrupanand Swamiji"
+                  className="w-full h-full object-contain object-bottom"
+                  data-testid="img-hero-gurudev"
+                />
               </div>
-            </motion.div>
+            </div>
           </motion.div>
-        </AnimatePresence>
+        </div>
 
         <div className="flex items-center justify-center gap-6 mt-6">
           <Button
