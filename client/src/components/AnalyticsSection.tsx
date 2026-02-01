@@ -101,7 +101,7 @@ export default function AnalyticsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center p-6 rounded-xl bg-card border border-card-border hover-elevate group"
+              className="text-center p-6 rounded-xl gradient-card border border-card-border hover-elevate gradient-card-hover group gradient-glow"
               data-testid={`stat-${stat.label.toLowerCase()}`}
             >
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">

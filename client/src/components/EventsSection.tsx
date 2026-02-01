@@ -70,7 +70,7 @@ export default function EventsSection() {
   ];
 
   return (
-    <section className="py-20 bg-card/30" ref={ref}>
+    <section className="py-20 gradient-section-alt" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

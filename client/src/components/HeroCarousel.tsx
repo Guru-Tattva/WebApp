@@ -299,7 +299,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-7rem)] bg-gradient-to-br from-background via-card/30 to-muted/20 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-7rem)] gradient-hero overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-primary blur-3xl" />
         <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-accent blur-3xl" />

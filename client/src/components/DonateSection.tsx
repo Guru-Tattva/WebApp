@@ -15,7 +15,7 @@ export default function DonateSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center bg-card border border-card-border rounded-2xl p-8 md:p-12 relative overflow-hidden"
+          className="text-center gradient-card border border-card-border rounded-2xl p-8 md:p-12 relative overflow-hidden gradient-glow"
         >
           <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2" />
