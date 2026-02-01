@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import heroImage from "@assets/image_1769956160033.png";
 import chittaImage from "@assets/image_1769956334823.png";
@@ -97,7 +98,7 @@ export default function AboutMeditation() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <main className="pt-28">
+      <main className="pt-24">
         <section className="relative">
           <div className="w-full">
             <img 
@@ -486,7 +487,7 @@ export default function AboutMeditation() {
           </motion.div>
         </section>
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );

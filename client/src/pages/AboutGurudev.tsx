@@ -1,9 +1,10 @@
 import { Link } from "wouter";
-import { Heart, Sparkles, Users, Globe, Mountain, BookOpen, Eye, Star, Compass, Sun, Flame } from "lucide-react";
+import { Heart, Sparkles, Users, Globe, Mountain, BookOpen, Eye, Star, Compass, Sun, Flame, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import childhoodImage from "@assets/image_1769957391117.png";
 import pashupatinathImage from "@assets/image_1769957401509.png";
@@ -12,6 +13,8 @@ import shivaTempleImage from "@assets/image_1769957430736.png";
 import knowledgeTransferImage from "@assets/image_1769957443464.png";
 import familyBlessingImage from "@assets/image_1769957456083.png";
 import himalayanJourneyImage from "@assets/image_1769957478638.png";
+
+const HERO_GURUDEV_IMAGE = "/hero-gurudev.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -58,6 +61,27 @@ const timelineEvents = [
     title: "Return to Society",
     description: "Emerging from the mountains to share the gift of Samarpan Meditation with humanity."
   }
+];
+
+const announcedYears = [
+  { year: "2003", theme: "the year of discipline" },
+  { year: "2006", theme: "the year of purification of the Chitta" },
+  { year: "2007", theme: "Year of Completion" },
+  { year: "2008", theme: "Youth Year" },
+  { year: "2009", theme: "Woman's Year" },
+  { year: "2010", theme: "the year of resolution" },
+  { year: "2011", theme: "the year of awakening" },
+  { year: "2012", theme: "Year of Teacher" },
+  { year: "2013-14", theme: "Year of Doctor" },
+  { year: "2015", theme: "Year of Jain Unity" },
+  { year: "2016-17", theme: "Year of Farmer" },
+  { year: "2018-19", theme: "Year of the Security Forces" },
+  { year: "2020-21", theme: "Year of Children" },
+  { year: "2022", theme: "Year of surrender" },
+  { year: "2023", theme: "Year of resolution" },
+  { year: "2024", theme: "Year of Cordiality, Intimity" },
+  { year: "2025", theme: "Year of Meditation" },
+  { year: "2026", theme: "Year of Spiritual Company" },
 ];
 
 const purposes = [
@@ -127,17 +151,17 @@ export default function AboutGurudev() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <main className="pt-28">
-        {/* Hero Section */}
+      <main className="pt-24">
+        {/* Hero Section - same guru image as home page */}
         <section className="relative">
-          <div className="w-full">
-            <img 
-              src={himalayanSageImage} 
-              alt="Param Pujya Shree Shivkrupanand Swamiji" 
-              className="w-full h-[50vh] md:h-[60vh] object-cover object-top"
+          <div className="w-full bg-muted/30">
+            <img
+              src={HERO_GURUDEV_IMAGE}
+              alt="Param Pujya Shree Shivkrupanand Swamiji"
+              className="w-full h-[50vh] md:h-[60vh] object-contain object-bottom"
               data-testid="img-hero-gurudev"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-background" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
             <div className="absolute bottom-8 left-0 right-0 text-center">
               <motion.h1 
                 className="text-3xl md:text-5xl font-serif font-bold text-white drop-shadow-lg"
@@ -430,46 +454,132 @@ export default function AboutGurudev() {
           </div>
         </section>
 
-        {/* Timeline Section */}
-        <section className="py-16 gradient-section">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
-              className="text-center mb-12"
+        {/* Timeline Section - The Divine Journey (home-page style: flower markers, alternating cards) */}
+        <section className="py-20 bg-gradient-to-b from-background via-card/30 to-background relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center mb-12"
             >
-              <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 The Divine Journey
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Key milestones in the extraordinary life of Param Pujya Gurudev
               </p>
             </motion.div>
 
             <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/30" />
-              
+              <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5">
+                <div className="h-full bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
+                <motion.div
+                  className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-accent via-primary to-accent"
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  style={{ transformOrigin: "top" }}
+                />
+              </div>
+
               {timelineEvents.map((event, index) => (
                 <motion.div
                   key={index}
-                  className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`relative flex items-start mb-12 ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
                 >
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div className="bg-card border border-border/50 rounded-lg p-4 shadow-sm">
+                  <div className={`hidden md:block w-[calc(50%-2rem)] ${
+                    index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
+                  }`}>
+                    <motion.div
+                      whileHover={{ scale: 1.02, y: -4 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      className="inline-block p-6 rounded-2xl bg-gradient-to-br from-card via-card to-card/80 border border-card-border shadow-lg hover:shadow-xl transition-shadow"
+                    >
                       <span className="text-xs font-semibold text-primary uppercase tracking-wide">{event.year}</span>
-                      <h4 className="text-lg font-serif font-semibold text-foreground mt-1">{event.title}</h4>
-                      <p className="text-sm text-muted-foreground mt-1">{event.description}</p>
+                      <h3 className="text-xl font-serif font-semibold text-foreground mt-2 mb-2">{event.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed text-sm">{event.description}</p>
+                    </motion.div>
+                  </div>
+
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                    <div className="relative w-12 h-12 flex items-center justify-center">
+                      {[0, 45, 90, 135, 180, 225, 270, 315].map((rotate, i) => (
+                        <div
+                          key={i}
+                          className="absolute w-4 h-8 rounded-full bg-gradient-to-t from-primary/40 to-accent/30"
+                          style={{
+                            clipPath: "ellipse(50% 100% at 50% 100%)",
+                            transform: `rotate(${rotate}deg)`,
+                            transformOrigin: "center bottom",
+                          }}
+                        />
+                      ))}
+                      <div className="relative z-10 w-6 h-6 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-lg">
+                        <span className="text-xs font-bold text-white">{index + 1}</span>
+                      </div>
                     </div>
                   </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background" />
+
+                  <div className="md:hidden ml-16 p-5 rounded-2xl bg-gradient-to-br from-card via-card to-card/80 border border-card-border shadow-lg">
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wide">{event.year}</span>
+                    <h3 className="text-lg font-serif font-semibold text-foreground mt-2 mb-2">{event.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{event.description}</p>
+                  </div>
+
+                  <div className="hidden md:block w-[calc(50%-2rem)]" />
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Years Announced by Gurudev - distinct style (list/grid) */}
+        <section className="py-20 gradient-section-alt">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                <Calendar className="h-7 w-7 text-primary" />
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                Years Announced by Gurudev
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Annual themes proclaimed by Param Pujya Shree Shivkrupanand Swamiji for spiritual focus
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="space-y-3"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {announcedYears.map((item, index) => (
+                <motion.div
+                  key={item.year}
+                  variants={fadeInUp}
+                  className="flex flex-wrap items-baseline gap-2 sm:gap-4 py-3 px-4 sm:px-6 rounded-xl bg-card/80 border border-card-border hover:bg-card transition-colors"
+                >
+                  <span className="font-serif font-bold text-primary text-lg shrink-0 w-20 sm:w-24">{item.year}</span>
+                  <span className="text-muted-foreground flex-1">..................</span>
+                  <span className="text-foreground font-medium text-sm sm:text-base">{item.theme}</span>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
@@ -676,7 +786,7 @@ export default function AboutGurudev() {
           </motion.div>
         </section>
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );

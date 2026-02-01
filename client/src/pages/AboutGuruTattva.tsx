@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import guruQuoteImage from "@assets/image_1769958250464.png";
 import diaryLanguagesImage from "@assets/image_1769958260246.png";
+import logoImage from "@assets/Gurutattva-Logo-Regi_1769940433810.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -109,12 +111,45 @@ export default function AboutGuruTattva() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <main className="pt-28">
-        {/* Hero Section */}
-        <section className="relative py-20 gradient-hero overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-background" />
+      <main className="pt-24">
+        {/* Hero Section - website logo */}
+        <section className="relative py-12 md:py-16">
+          <div className="flex flex-col items-center justify-center text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="mb-6"
+            >
+              <img
+                src={logoImage}
+                alt="GuruTattva"
+                className="h-24 md:h-32 w-auto mx-auto object-contain"
+              />
+            </motion.div>
+            <motion.h1
+              className="text-3xl md:text-5xl font-serif font-bold text-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              GuruTattva
+            </motion.h1>
+            <motion.p
+              className="text-lg md:text-xl text-primary font-medium mt-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              A Global Platform for Spiritual Awakening
+            </motion.p>
+          </div>
+        </section>
+
+        <section className="relative pt-6 pb-16 gradient-hero overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background" />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <motion.div 
+            <motion.div
               className="text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -123,16 +158,10 @@ export default function AboutGuruTattva() {
               <span className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
                 Established October 1, 2020
               </span>
-              <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
-                GuruTattva
-              </h1>
-              <p className="text-xl text-primary font-medium mb-4">
-                A Global Platform for Spiritual Awakening
-              </p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                On the sacred full-moon day (Purnima) of Purushottam month, 
-                Param Pujya Shree Shivkrupanand Swamiji announced the establishment 
-                of this divine platform to help seekers recognize and awaken the 
+                On the sacred full-moon day (Purnima) of Purushottam month,
+                Param Pujya Shree Shivkrupanand Swamiji announced the establishment
+                of this divine platform to help seekers recognize and awaken the
                 <span className="text-primary font-medium"> Gurutattva</span> within.
               </p>
             </motion.div>
@@ -440,7 +469,7 @@ export default function AboutGuruTattva() {
           </motion.div>
         </section>
       </main>
-
+      <Footer />
       <ScrollToTop />
     </div>
   );
