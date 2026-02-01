@@ -33,7 +33,7 @@ export default function Navbar() {
     { label: "About Gurudev", href: "#gurudev" },
     { label: "Events", href: "#events" },
     { label: "News", href: "/news", isRoute: true },
-    { label: "About Himalaya Meditation", href: "#himalayan-meditation" },
+    { label: "Himalayan Meditation", href: "/about-meditation", isRoute: true },
   ];
 
   const secondaryNavItems = [
