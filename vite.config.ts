@@ -35,23 +35,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            if (id.includes("react-dom") || id.includes("react/")) return "react-vendor";
-            if (id.includes("recharts")) return "recharts";
-            if (id.includes("framer-motion")) return "framer-motion";
-            if (id.includes("tsparticles") || id.includes("@tsparticles")) return "tsparticles";
-            if (id.includes("@radix-ui")) return "radix-ui";
-            if (id.includes("embla-carousel")) return "embla-carousel";
-            if (id.includes("lucide-react") || id.includes("react-icons")) return "icons";
-            return "vendor";
-          }
-        },
-      },
-    },
+    chunkSizeWarningLimit: 800,
   },
   server: {
     fs: {
